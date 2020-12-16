@@ -26,11 +26,24 @@ Array.prototype.twoSum = function() {
 
 
 Array.prototype.transpose = function(){
-    transposed = [];
+    // let transposed = new Array(this.length);
+    let transposed = Array.from({length: this.length}, () => Array.from({length: this.length}))
     
+    for (let i = 0; i < this.length; i++){
+        for (let x = 0; x < this.length; x++){
+            // debugger
+            // if (transposed[x] === undefined){
+            //     transposed[x] = new Array(this.length)
+            // }
+            transposed[x][i] = this[i][x]
+        }
+    }
+    return transposed;
 }
-console.log([
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-].transpose());
+
+
+// console.log([
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ].transpose());
